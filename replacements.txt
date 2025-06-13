@@ -1,0 +1,2 @@
+regex:AKIA[0-9A-Z]{16}==>***REMOVED***
+regex:([a-zA-Z0-9/+]{40})==>***REMOVED***
