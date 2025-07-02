@@ -40,11 +40,12 @@ def extract_features(url):
     #Feature 5
     domain=urlparse(url).netloc
     feature["has-"]=int('-' in domain)
+    '''check if it has hyphens cause normally that's a sign of a phishy url'''
         
     #Feature 6
     protocol=urlparse(url).scheme
     feature["has_https"]=int(protocol=="https")
-        
+    
     #Feature 7
     domain=urlparse(url).netloc
     feature["has_http_in_domain"]=int('http' in domain)

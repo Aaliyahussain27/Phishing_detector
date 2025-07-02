@@ -7,19 +7,16 @@ from .THE_CODE import extract_features
 
 app = FastAPI()
 
-# Enable CORS so Android app can talk to this backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 🔐 For now, open to all
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Load your trained model
 model = joblib.load("phishing_model.pkl")
 
-# Request format validation (Pydantic)
 class UrlRequest(BaseModel):
     url: str
 
